@@ -1,6 +1,6 @@
-const utils = require('../Utils');
+const {parseData} = require('../Utils');
 
-const numbers = utils.parseData(1);
+const numbers = parseData(1);
 
 function main (data=numbers) {
     return `${sumTwo.name}: ${sumTwo(data)}\n${sumThree.name}: ${sumThree(data)}`
