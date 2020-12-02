@@ -1,11 +1,12 @@
 const utils = require('./Utils')
 
-const rules = utils.parseData(2)
+console.log(countValidPw());
 
-function countValidPw(rules){
+function countValidPw(){
 
     let answerOne = 0;
     let answerTwo = 0;
+    const rules = utils.parseData(2);
 
     rules.forEach(rule=>{
         const splitRule = rule.split(' ');
@@ -18,28 +19,24 @@ function countValidPw(rules){
         checkChar(letter,min,max,password);
     })
 
-    return {
-        'PartOne': answerOne,
-        'PartTwo': answerTwo
-    }
+    return `${count.name}: ${answerOne}\n${checkChar.name}: ${answerTwo}`
 
     function count (letter, min, max, password){
-        const letterArr = password.split('').filter(char=>{return char===letter})
-        const count = letterArr.length
+        const letterArr = password.split('').filter(char=>{return char===letter});
+        const count = letterArr.length;
         if(count>=min&&count<=max){
-            answerOne++
-        }
-    }
+            answerOne++;
+        };
+    };
     
     function checkChar(letter, min, max, password){
         if(password[min-1]===letter&&password[max-1]===letter){
             return
-        }
+        };
         if(password[min-1]===letter||password[max-1]===letter){
-            answerTwo++
-        }
+            answerTwo++;
+        };
     };
 
-}
+};
 
-console.log(countValidPw(rules));

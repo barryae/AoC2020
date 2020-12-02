@@ -1,8 +1,12 @@
 const utils = require('./Utils')
 
-function main () {
+console.log(main())
 
-    const data = utils.parseData(3)
+function main () {
+    // Save input.txt in Input folder with input<dayNumber>.txt format
+
+    // Replace day with day number
+    const data = utils.parseData(day)
 
     return `${partOne.name}: ${partOne()}\n${partTwo.name}: ${partTwo()}`
 
@@ -14,6 +18,4 @@ function main () {
         return;
     }
 
-}
-
-console.log(main())
+};

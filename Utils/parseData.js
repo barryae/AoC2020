@@ -1,5 +1,7 @@
 const fs = require ('fs')
 
-module.exports = (day)=>{
-    return fs.readFileSync(`./Input/input${day}.txt`).toString('utf8').split('\n');
+const parseData = (day)=>{
+    return fs.readFileSync(`./Inputs/input${day}.txt`).toString('utf8').split('\n');
 }
+
+module.exports = parseData;
