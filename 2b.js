@@ -21,4 +21,5 @@ function checkChar(letter, min, max, password){
         valid++
     }
 };
-console.log(valid);
+
+return valid

@@ -15,9 +15,8 @@ for(let i=0;i<numbers.length;i++){
             const nexterNum = Number.parseInt(numbers[k]);
             const sum = currNum+nextNum+nexterNum
             if ( sum === 2020){
-                console.log(currNum,nextNum,nexterNum)
-                console.log(currNum*nextNum*nexterNum)
-                return
+                const answer = currNum*nextNum*nexterNum;
+                return answer;
             }
 
         }
