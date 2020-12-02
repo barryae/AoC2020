@@ -1,11 +1,15 @@
-const utils = require('./Utils')
+const utils = require('./Utils');
+
+console.log(find2020());
 
 function find2020 () {
-    const numbers = utils.parseData(1)
+
+    const numbers = utils.parseData(1);
 
     return `${sumTwo.name}: ${sumTwo()}\n${sumThree.name}: ${sumThree()}`
 
     function sumTwo(){
+
         for(let i=0;i<numbers.length;i++){
 
             const currNum = Number.parseInt(numbers[i]);
@@ -13,18 +17,19 @@ function find2020 () {
             for(let j=0;j<numbers.length;j++){
         
                 const nextNum = Number.parseInt(numbers[j]);
-                const sum = currNum+nextNum
+                const sum = currNum+nextNum;
 
                     if ( sum === 2020){
                         const answer = currNum*nextNum;
-                        return answer;
-                    }        
+                        return answer
+                    };     
         
-            }
-        }
-    }
+            };
+        };
+    };
     
     function sumThree(){
+
         for(let i=0;i<numbers.length;i++){
 
             const currNum = Number.parseInt(numbers[i]);
@@ -36,19 +41,17 @@ function find2020 () {
                 for(let k=0;k<numbers.length;k++){
         
                     const nexterNum = Number.parseInt(numbers[k]);
-                    const sum = currNum+nextNum+nexterNum
+                    const sum = currNum+nextNum+nexterNum;
         
                     if ( sum === 2020){
                         const answer = currNum*nextNum*nexterNum;
-                        return answer;
-                    }
+                        return answer
+                    };
         
-                }
+                };
                 
-            }
-        }
-    }
+            };
+        };
+    };
 
-}
-
-console.log(find2020())
+};
