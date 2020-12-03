@@ -1,20 +1,18 @@
 const {days} = require('./Utils/daysLoader')
 
-const argInt = Number.parseInt(process.argv[1])
-
-// Checks if arg is int and is within day range, or defaults to last day
-const dayArg = argInt && argInt<=days.length && process.argv[1]||days.length;
-
 function day(){
-    let dayIndex = null;
+    const argInt = Number.parseInt(process.argv[1])
 
-    dayIndex = dayArg-1;
+    // Checks if arg is int and is within day range, or defaults to last day
+    const dayArg = argInt && argInt<=days.length && process.argv[1]||days.length;
+
+    const dayIndex = dayArg-1;
 
     console.log(days[dayIndex].main(dayArg),"\n")
 }
 
 function today(){
-    console.log(days[days.length-1].main(),"\n")
+    day();
 }
 
 function all(){
