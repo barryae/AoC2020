@@ -1,4 +1,4 @@
-const {days} = require('./daysLoader')
+const {days} = require('./Utils/daysLoader')
 
 const dayArg = process.argv[1]
 
