@@ -1,8 +1,8 @@
 const utils = require('../Utils');
 
 
-function main () {
-    const numbers = utils.parseData(1);
+function main (day) {
+    const numbers = utils.parseData(day);
     return `${sumTwo.name}: ${sumTwo(numbers)}\n${sumThree.name}: ${sumThree(numbers)}`
 };
 

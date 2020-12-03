@@ -12,6 +12,7 @@ function day(){
     }else{
         dayIndex = defaultDay
     } 
+    if(!days[dayIndex]){throw new Error(`No main function found in day ${day}`)}
     console.log(days[dayIndex].main(day),"\n")
 }
 

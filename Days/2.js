@@ -1,11 +1,11 @@
 const utils = require('../Utils')
 
 
-function main(){
+function main(day){
     
     let answerOne = 0;
     let answerTwo = 0;
-    const rules = utils.parseData(2);
+    const rules = utils.parseData(day);
 
     rules.forEach(rule=>{
         const splitRule = rule.split(' ');

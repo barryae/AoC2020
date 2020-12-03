@@ -1,7 +1,7 @@
 const utils = require('../Utils')
 
-function main () {
-    const data = utils.parseData(3);
+function main (day) {
+    const data = utils.parseData(day);
     const slopes = [[1,1],[3,1],[5,1],[7,1],[1,2]]
     return `Part One: ${countTrees(data,slopes[1])}\nPart Two: ${countTrees(data,slopes)}`
 };
