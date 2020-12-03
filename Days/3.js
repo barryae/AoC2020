@@ -3,7 +3,7 @@ const utils = require('../Utils')
 function main () {
     const data = utils.parseData(3);
     const slopes = [[1,1],[3,1],[5,1],[7,1],[1,2]]
-    return `Part One: ${countTrees(data,[slopes[1]])}\nPart Two: ${countTrees(data,slopes)}`
+    return `Part One: ${countTrees(data,slopes[1])}\nPart Two: ${countTrees(data,slopes)}`
 };
 
 function countTrees(data,slopes){
