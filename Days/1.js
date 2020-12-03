@@ -1,11 +1,15 @@
-const {parseData} = require('../Utils');
+const utils = require('../Utils');
 
-const numbers = parseData(1);
 
-function main (data=numbers) {
-    return `${sumTwo.name}: ${sumTwo(data)}\n${sumThree.name}: ${sumThree(data)}`
+function main () {
+    const numbers = utils.parseData(1);
+    return `${sumTwo.name}: ${sumTwo(numbers)}\n${sumThree.name}: ${sumThree(numbers)}`
 };
 
+/** 
+ * Finds two numbers that sum to equal 2020 and returns their product
+ * @param numbers Array of strings of numbers
+ * */ 
 function sumTwo(numbers){
 
     for(let i=0;i<numbers.length;i++){
@@ -26,6 +30,10 @@ function sumTwo(numbers){
     };
 };
 
+/**
+ * Finds three numbers that sum to equal 2020 and returns their product
+ * @param numbers Array of strings of numbers
+ */ 
 function sumThree(numbers){
 
     for(let i=0;i<numbers.length;i++){

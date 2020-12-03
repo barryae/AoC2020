@@ -1,10 +1,11 @@
 const utils = require('../Utils')
 
-let answerOne = 0;
-let answerTwo = 0;
-const defaultRules = utils.parseData(2);
 
-function main(rules=defaultRules){
+function main(){
+    
+    let answerOne = 0;
+    let answerTwo = 0;
+    const rules = utils.parseData(2);
 
     rules.forEach(rule=>{
         const splitRule = rule.split(' ');
@@ -13,27 +14,29 @@ function main(rules=defaultRules){
         const max = Number.parseInt(minMax[1]);
         const letter = splitRule[1][0];
         const password = splitRule[2];
-        count(letter,min,max,password);
-        checkChar(letter,min,max,password);
+        if(count(letter,min,max,password)){answerOne++};
+        if(checkChar(letter,min,max,password)){answerTwo++};
     })
 
     return `${count.name}: ${answerOne}\n${checkChar.name}: ${answerTwo}`
 };
 
+// Returns true if letter occurs within limits in password
 function count (letter, min, max, password){
     const letterArr = password.split('').filter(char=>{return char===letter});
     const count = letterArr.length;
     if(count>=min&&count<=max){
-        answerOne++;
+        return true;
     };
 };
 
+// Returns true if letter occurs in either min or max space but not both
 function checkChar(letter, min, max, password){
     if(password[min-1]===letter&&password[max-1]===letter){
-        return
+        return false
     };
     if(password[min-1]===letter||password[max-1]===letter){
-        answerTwo++;
+        return true;
     };
 };
 

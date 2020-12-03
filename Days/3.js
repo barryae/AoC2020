@@ -1,12 +1,10 @@
 const utils = require('../Utils')
 
-const defaultData = utils.parseData(3)
-
-function main (data=defaultData) {
+function main () {
     // Save input.txt in Input folder with input<dayNumber>.txt format
+    data = utils.parseData(3);
 
     return `${partOne.name}: ${partOne()}\n${partTwo.name}: ${partTwo()}`
-
 };
 
 function partOne(){ 

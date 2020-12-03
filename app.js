@@ -3,10 +3,16 @@ const {days} = require('./daysLoader')
 const dayArg = process.argv[1]
 
 function day(){
-    dayArg != undefined ? 
-    console.log(`Day ${dayArg}\n${days[dayArg-1].main()}\n`)
-    :
-    console.log(days[days.length-1].main(),"\n")
+    const defaultDay = days.length-1;
+    let day = defaultDay;
+    let dayIndex = null;
+    if(dayArg != undefined){
+        day = dayArg
+        dayIndex = day-1;
+    }else{
+        dayIndex = defaultDay
+    } 
+    console.log(days[dayIndex].main(day),"\n")
 }
 
 function today(){
