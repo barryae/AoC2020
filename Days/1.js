@@ -1,3 +1,4 @@
+const { lookup } = require('dns');
 const utils = require('../Utils');
 
 
@@ -59,6 +60,31 @@ function sumThree(numbers){
         };
     };
 };
+
+function sumAny(numbers, times) {
+    const maxIter = times;
+    let currIter = 0;
+    let nums = []
+    let firstNum;
+    let secNum;
+    let thirdNum;
+
+    while(currIter<maxIter){
+        nums[currIter]=loop()
+    }
+
+    loop();
+
+    const loop = () => {
+        for(let i=0;i<numbers.length;i++){
+            nums[currIter] = numbers[i]
+            loop();
+        };
+        if(sum(nums)===2020){return nums.reduce((a,b)=>{a*b},1)}
+        currIter++;
+    }
+
+}
 
 module.exports = {
     main,
