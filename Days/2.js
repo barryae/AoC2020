@@ -5,7 +5,7 @@ function main(day){
     
     let answerOne = 0;
     let answerTwo = 0;
-    const rules = utils.parseData(day);
+    let rules = utils.parseData(day).split("\n");
 
     rules.forEach(rule=>{
         const splitRule = rule.split(' ');

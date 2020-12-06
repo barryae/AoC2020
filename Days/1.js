@@ -3,7 +3,7 @@ const utils = require('../Utils');
 
 
 function main (day) {
-    const numbers = utils.parseData(day);
+    let numbers = utils.parseData(day).split("\n");
     return `${sumTwo.name}: ${sumTwo(numbers)}\n${sumThree.name}: ${sumThree(numbers)}`
 };
 

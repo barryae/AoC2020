@@ -1,7 +1,7 @@
 const utils = require('../Utils')
 
 function main (day) {
-    const data = utils.parse4(day);
+    let data = utils.parse4(day);
     return (
 `
 ${partOne.name}: ${partOne(data)}
@@ -13,9 +13,10 @@ ${partTwo.name}: ${partTwo(data)}
 function partOne(data){ 
     let i = 0;
     let validCount = 0;
-    let count =0;
+    
     while(data[i]!=undefined){
         let hasCid = false;
+        let count =0;
         while(data[i]!="" && data[i]!=undefined){
             let line = data[i].split(" ")
             line.forEach(part=>{part.split(" ").forEach(field=>{if(field[0]=="c"){hasCid=true}})})
@@ -23,7 +24,6 @@ function partOne(data){
             i++
         }
         if(count===8 || (count===7 && hasCid===false)){validCount++}
-        count = 0
         i++
     }
     return validCount;
@@ -33,9 +33,9 @@ function partTwo(data){
     let i = 0;
     let validCount = 0;
     
-    let count =0;
     while(data[i]!=undefined){
         let hasCid = false;
+        let count =0;
         let isValid = true;
         while(data[i]!="" && data[i]!=undefined){
             let line = data[i].split(" ")
@@ -92,7 +92,6 @@ function partTwo(data){
             i++
         }
         if((count===8 && isValid) || (count===7 && hasCid===false && isValid)){validCount++}
-        count = 0
         isValid = true;
         i++
     }
