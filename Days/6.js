@@ -23,6 +23,7 @@ function partOne(data){
             }
             return
         }
+
         sum+=answers.length
         answers = []
     })
@@ -32,26 +33,27 @@ function partOne(data){
 function partTwo(data){
     let sum =0;
     let members = 0;
-    let hash = {};
+    let dict = {};
     data.forEach(line=>{
         if(line!=""){
             members++
             for(let i=0;i<line.length;i++){
-                if (!hash[line[i]]){
-                     hash[line[i]] = 1
+                let stored = dict[line[i]]
+                if (!stored){
+                     stored = 1
                 }else{
-                    hash[line[i]]++
+                    stored++
                 }
             }
             return
         }  
        
-        Object.keys(hash).forEach(ans=>{
-            if (hash[ans]===members){
+        Object.keys(dict).forEach(ans=>{
+            if (dict[ans]===members){
                 sum++
             }
         })
-        hash={};
+        dict={};
         members = 0;
 
     })
