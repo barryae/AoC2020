@@ -17,7 +17,7 @@ function today(){
 
 function all(){
     for (let i = 0; i < days.length; i++) {
-        console.log(`Day ${i+1}\n${days[i].main()}\n`)  
+        console.log(`Day ${i+1}\n${days[i].main(i+1)}\n`)  
     }
 }
 

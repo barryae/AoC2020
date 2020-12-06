@@ -22,6 +22,7 @@ function partOne(data){
             binary[i]==="F"?lower(rows):upper(rows)
         }
         for(let i=7;i<10;i++){
+
             binary[i]==="L"?lower(columns):upper(columns)
         }
         let seatId = rows[0] * 8 + columns[0];
