@@ -21,12 +21,10 @@ function partOne(data){
                      answers.push(line[i])
                 }
             }
-        }  
-        if(line===""){ 
-            sum+=answers.length
-            answers = []
             return
         }
+        sum+=answers.length
+        answers = []
     })
     return sum;
 };
@@ -45,17 +43,17 @@ function partTwo(data){
                     hash[line[i]]++
                 }
             }
-        }  
-        if(line===""){ 
-            Object.keys(hash).forEach(ans=>{
-                if (hash[ans]===members){
-                    sum++
-                }
-            })
-            hash={};
-            members = 0;
             return
-        }
+        }  
+       
+        Object.keys(hash).forEach(ans=>{
+            if (hash[ans]===members){
+                sum++
+            }
+        })
+        hash={};
+        members = 0;
+
     })
     return sum;
 };
