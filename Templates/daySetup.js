@@ -2,7 +2,7 @@ const utils = require('../Utils');
 
 function main (day) {
     // Save input.txt in Input folder with input<dayNumber>.txt format
-    const data = utils.parseData(day);
+    const data = utils.parseData(day).split('\n');
     
     return (
 `
