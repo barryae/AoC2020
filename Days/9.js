@@ -17,10 +17,9 @@ function partOne(data,preamble){
     let lo = 0;
     let hi = preamble-1;
     let curr = hi+1;
-    let isValid = false;
-    
-    while(curr<data.length){
-        isValid = false;
+
+    for(lo=0;curr<data.length;lo++,curr++,hi++){
+        let isValid = false;
         for(let i=lo;i<=hi;i++){
             for(let j=lo;j<=hi;j++){
                 if((data[curr]===(data[i]+data[j]))&&(i!=j)) {
@@ -28,26 +27,17 @@ function partOne(data,preamble){
                 }
             }
         }
-
-        if(!isValid){return data[curr]}
-        lo++
-        hi++
-        curr++
+        if(!isValid){return data[curr]}  
     }
 };
 
 function partTwo(num,data){
-
     for(let i=0;i<data.length-1;i++) {
-        
         for(let j=i+1;j<data.length;j++){
-
             let slice = data.slice(i,j)
-
             let numB = slice.reduce((acc,num)=>{
                 return acc+num
             },0)
-
             if(numB===num){
                 slice.sort((a,b)=>b-a)
                 return slice[0]+slice[slice.length-1]
@@ -55,9 +45,6 @@ function partTwo(num,data){
 
         }
     }
-
-
-    return ;
 };
 
 module.exports = {
