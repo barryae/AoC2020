@@ -1,0 +1,27 @@
+{
+  "name": "aoc2019",
+  "version": "1.0.0",
+  "description": "Here are my solutions for AoC2019",
+  "main": "1.js",
+  "scripts": {
+    "day": "node -e 'require(\"./app.js\").day()'",
+    "today": "node -e 'require(\"./app.js\").today()'",
+    "all": "node -e 'require(\"./app.js\").all()'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barryae/AoC2020.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/barryae/AoC2020/issues"
+  },
+  "homepage": "https://github.com/barryae/AoC2020#readme",
+  "dependencies": {
+    "glob": "^7.1.6",
+    "path": "^0.12.7"
+  },
+  "keywords": []
+}
